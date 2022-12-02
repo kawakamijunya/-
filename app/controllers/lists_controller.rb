@@ -13,7 +13,8 @@ class ListsController < ApplicationController
     #詳細画面へリダイレクト
     redirect_to list_path(@list.id)
     else
-    render :new
+      @lists=List.all
+    render :index #<=newからindexへ変更
     end
   end
 
